@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background=""
+            android:background="@drawable/ic_home_black_24dp"
             android:textSize="18dp" />
 
     </LinearLayout>
@@ -88,9 +88,10 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:text="Login" />
     </LinearLayout>
@@ -107,6 +108,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -166,3 +168,4 @@
 
 
     </LinearLayout>
+</RelativeLayout>
