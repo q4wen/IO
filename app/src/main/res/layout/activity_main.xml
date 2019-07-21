@@ -7,11 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--
     <fragment
-        android:name="uwaterloo.ca.patientmobile.HomeFragment"
-        android:id="@+id/fooFragment"
+        android:name="uwaterloo.ca.patientmobile.log.LogFragment"
+        android:id="@+id/log_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+        -->
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
