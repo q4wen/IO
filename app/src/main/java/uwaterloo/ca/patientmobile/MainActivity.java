@@ -10,12 +10,15 @@ import android.view.MenuItem;
 
 import uwaterloo.ca.patientmobile.dashboard.DashBoardFragment;
 import uwaterloo.ca.patientmobile.log.LogFragment;
+import uwaterloo.ca.patientmobile.setting.SettingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private Fragment logFragment;
     private Fragment dashBoardFragment;
+    private Fragment settingFragment;
     private FragmentManager fragmentManager;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     fragmentManager.beginTransaction().replace(R.id.content_frame, dashBoardFragment).commit();
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_setting:
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, settingFragment).commit();
                     return true;
             }
             return false;
@@ -41,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         logFragment = new LogFragment();
         dashBoardFragment = new DashBoardFragment();
+        settingFragment = new SettingFragment();
 
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, dashBoardFragment).commit();
