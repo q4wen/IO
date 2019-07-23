@@ -2,6 +2,7 @@
     <string name="app_name">PatientMobile</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_log">Log</string>
+    <string name="title_measure">Measure</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_setting">Setting</string>
 

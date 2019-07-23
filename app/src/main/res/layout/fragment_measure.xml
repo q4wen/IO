@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".measure.MeasureFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Select your measure"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/cvp"
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="#58D68D">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CVP" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="#E74C3C">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SjVo2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="#F4D03F">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CI/SV" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="#5DADE2">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BP" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="#E67E22">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rStO2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@android:color/holo_green_dark">
+            <TextView
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BVI" />
+        </RelativeLayout>
+
+    </GridLayout>
+</LinearLayout>
+
+
+</FrameLayout>

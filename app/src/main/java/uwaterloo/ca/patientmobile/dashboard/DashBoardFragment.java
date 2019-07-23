@@ -66,7 +66,7 @@ public class DashBoardFragment extends Fragment {
             }
         });
     }
-    
+
     private LineData generateRandomData() {
         int count = 10, range = 100;
         ArrayList<Entry> values = new ArrayList<>();

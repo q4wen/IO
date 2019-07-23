@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import uwaterloo.ca.patientmobile.dashboard.DashBoardFragment;
 import uwaterloo.ca.patientmobile.log.LogFragment;
+import uwaterloo.ca.patientmobile.measure.MeasureFragment;
 import uwaterloo.ca.patientmobile.setting.SettingFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment logFragment;
     private Fragment dashBoardFragment;
     private Fragment settingFragment;
+    private Fragment measureFragment;
     private FragmentManager fragmentManager;
 
 
@@ -26,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_log:
-                    fragmentManager.beginTransaction().replace(R.id.content_frame, logFragment).commit();
+                case R.id.navigation_measure:
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, measureFragment).commit();
                     return true;
                 case R.id.navigation_dashboard:
                     fragmentManager.beginTransaction().replace(R.id.content_frame, dashBoardFragment).commit();
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         logFragment = new LogFragment();
         dashBoardFragment = new DashBoardFragment();
+        measureFragment = new MeasureFragment();
         settingFragment = new SettingFragment();
 
         fragmentManager = getSupportFragmentManager();
