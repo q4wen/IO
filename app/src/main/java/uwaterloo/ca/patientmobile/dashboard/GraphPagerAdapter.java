@@ -1,18 +1,17 @@
 package uwaterloo.ca.patientmobile.dashboard;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import uwaterloo.ca.patientmobile.R;
@@ -21,7 +20,6 @@ import uwaterloo.ca.patientmobile.R;
 public class GraphPagerAdapter extends PagerAdapter {
 
     private Context mContext;
-
     private List<LineData> dataList;
 
     public GraphPagerAdapter(Context context, List<LineData> dataList) {
@@ -41,6 +39,9 @@ public class GraphPagerAdapter extends PagerAdapter {
 
         LineChart lineChart = layout.findViewById(R.id.chart);
         lineChart.setData(dataList.get(position));
+        lineChart.getAxisRight().setEnabled(false);
+        lineChart.setDrawGridBackground(false);
+        lineChart.getDescription().setEnabled(false);
 
         collection.addView(layout);
         return layout;

@@ -1,31 +1,24 @@
 package uwaterloo.ca.patientmobile.dashboard;
 
-import android.content.Context;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.data.LineRadarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import uwaterloo.ca.patientmobile.R;
-import uwaterloo.ca.patientmobile.log.LogAdapter;
 
 public class DashBoardFragment extends Fragment {
 
@@ -42,33 +35,50 @@ public class DashBoardFragment extends Fragment {
         vp = view.findViewById(R.id.view_pager);
         vp.setAdapter(new GraphPagerAdapter(getContext(), dataList));
 
-        /*
-        Button btn = view.findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button yearBtn = view.findViewById(R.id.yearBtn);
+        yearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i = 0; i < 3; i++) {
-                    ArrayList<LineData> dataList = new ArrayList<>();
+                ArrayList<LineData> dataList = new ArrayList<>();
+                for (int i = 0; i < 3; i++)
                     dataList.add(generateRandomData());
-                    vp.setAdapter(new GraphPagerAdapter(getContext(), dataList));
-                }
+                vp.setAdapter(new GraphPagerAdapter(getContext(), dataList));
             }
         });
-        */
+        Button mothBtn = view.findViewById(R.id.monthBtn);
+        mothBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<LineData> dataList = new ArrayList<>();
+                for (int i = 0; i < 3; i++)
+                    dataList.add(generateRandomData());
+                vp.setAdapter(new GraphPagerAdapter(getContext(), dataList));
+            }
+        });
+        Button weekBtn = view.findViewById(R.id.weekBtn);
+        weekBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<LineData> dataList = new ArrayList<>();
+                for (int i = 0; i < 3; i++)
+                    dataList.add(generateRandomData());
+                vp.setAdapter(new GraphPagerAdapter(getContext(), dataList));
+            }
+        });
     }
-
+    
     private LineData generateRandomData() {
         int count = 10, range = 100;
         ArrayList<Entry> values = new ArrayList<>();
 
         for (int j = 0; j < count; j++) {
-
-            float val = (float) (Math.random() * range) - 30;
+            float val = (float) (Math.random() * range);
             values.add(new Entry(j, val));
         }
 
-        LineDataSet set;
-        set = new LineDataSet(values, "data1");
+        LineDataSet set = new LineDataSet(values, "");
+        set.setDrawFilled(true);
+
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set);
         LineData data = new LineData(dataSets);
