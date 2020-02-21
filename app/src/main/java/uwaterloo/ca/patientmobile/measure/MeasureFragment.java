@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import uwaterloo.ca.patientmobile.MainActivity;
 import uwaterloo.ca.patientmobile.R;
@@ -27,7 +28,7 @@ public class MeasureFragment extends Fragment {
         cvpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MeasureActivity.class);
+                Intent intent = new Intent(getContext(), Spo2Activity.class);
                 startActivity(intent);
             }
         });
